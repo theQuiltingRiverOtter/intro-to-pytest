@@ -6,21 +6,37 @@ import pytest
 def test_add():
     assert calculator.calculate(2, 3, "add") == 5
     assert calculator.calculate(180, 240, "add") == 420
+    assert calculator.calculate(-52, -3, "add") == -55
+    assert calculator.calculate(-3, 3, "add") == 0
+    assert calculator.calculate(3.0, 3, "add") == 6.0
+    assert calculator.calculate(-9.5, -2.3, "add") == -11.8
 
 
 def test_subtract():
     assert calculator.calculate(10, 2, "subtract") == 8
     assert calculator.calculate(1000, 200, "subtract") == 800
+    assert calculator.calculate(-3, -5, "subtract") == 2
+    assert calculator.calculate(-10, 8, "subtract") == -18
+    assert calculator.calculate(10.5, 2.5, "subtract") == 8.0
+    assert calculator.calculate(3, 0.5, "subtract") == 2.5
 
 
 def test_multiply():
     assert calculator.calculate(3, 4, "multiply") == 12
     assert calculator.calculate(32, 85, "multiply") == 2720
+    assert calculator.calculate(-3, -5, "multiply") == 15
+    assert calculator.calculate(-10, 8, "multiply") == -80
+    assert calculator.calculate(2.5, 2.5, "multiply") == 6.25
+    assert calculator.calculate(-3, 0.5, "multiply") == -1.5
 
 
 def test_divide():
     assert calculator.calculate(4, 2, "divide") == 2
     assert calculator.calculate(3000, 20, "divide") == 150
+    assert calculator.calculate(-10, -2, "divide") == 5
+    assert calculator.calculate(-40, 5, "divide") == -8
+    assert calculator.calculate(12, 2.5, "divide") == 4.8
+    assert calculator.calculate(-3, 0.5, "divide") == -6
     with pytest.raises(ValueError):
         calculator.calculate(4, 0, "divide")
 
