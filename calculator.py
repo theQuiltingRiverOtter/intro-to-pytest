@@ -15,7 +15,7 @@ def calculate(num1, num2, operation):
             raise ValueError("Cannot divide by zero")
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) != 4:
         print("Usage: calculator.py <num1> <num2> <operation>")
         sys.exit(1)
@@ -25,3 +25,7 @@ if __name__ == "__main__":
 
     result = calculate(num1, num2, operation)
     print(f"Result: {result}")
+
+
+if __name__ == "__main__":
+    main()
